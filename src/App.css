@@ -1,22 +1,145 @@
+body {
+  /* Disables pull-to-refresh so down swipe works */
+  overscroll-behavior: contain;
+}
+
 .App {
   text-align: center;
+  margin: 1rem;
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.NavBar {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: black;
+  margin: -1rem -1rem 1rem -1rem;
   color: white;
+  padding: 1rem;
 }
 
-.App-link {
-  color: #09d3ac;
+.NavBar-title {
+  font-size: 1.25rem;
+}
+
+.Status {
+  color: red;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  font-size: 15vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.Grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-gap: 1rem 1rem;
+}
+
+.Cell {
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  border: 1px solid #333;
+  font-size: 3vh;
+}
+
+@keyframes zoomInOut {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.1);
+    transform-origin: center;
+  }
+}
+
+.Cell--merged {
+  animation-duration: 250ms;
+  animation-name: zoomInOut;
+  animation-iteration-count: 2;
+  animation-direction: alternate;
+}
+
+.Cell--0 {
+  background: #ddd;
+}
+
+.Cell--2 {
+  background: #001f3f;
+  color: hsla(210, 100%, 75%, 1);
+}
+
+.Cell--4 {
+  background: #0074d9;
+  color: hsla(208, 100%, 85%, 1);
+}
+
+.Cell--8 {
+  background: #7fdbff;
+  color: hsla(197, 100%, 20%, 1);
+}
+
+.Cell--16 {
+  background: #39cccc;
+  color: rgb(0, 0, 0);
+}
+
+.Cell--32 {
+  background: #3d9970;
+  color: hsla(153, 43%, 15%, 1);
+}
+
+.Cell--64 {
+  background: #2ecc40;
+  color: hsla(127, 63%, 15%, 1);
+}
+
+.Cell--128 {
+  background: #01ff70;
+  color: hsla(146, 100%, 20%, 1);
+}
+
+.Cell--256 {
+  background: #ffdc00;
+  color: hsla(52, 100%, 20%, 1);
+}
+
+.Cell--512 {
+  background: #ff851b;
+  color: hsla(28, 100%, 20%, 1);
+}
+
+.Cell--1024 {
+  background: #ff4136;
+  color: hsla(3, 100%, 25%, 1);
+}
+
+.Cell--2048 {
+  background: #85144b;
+  color: hsla(331, 74%, 70%, 1);
+}
+
+.Cell--4096 {
+  background: #f012be;
+  color: hsla(314, 88%, 21%, 1);
+}
+
+.Cell--8192 {
+  background: #b10dc9;
+  color: hsla(292, 88%, 82%, 1);
+}
+
+.Cell--16384 {
+  background: #111;
+  color: #ddd;
 }
